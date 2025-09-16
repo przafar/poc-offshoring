@@ -4,6 +4,7 @@ import ProjectTotalInfoItem from '@/entity/project/ui/project-total-info-item';
 import { projects, projectsTotals } from '@/entity/project/model/mock';
 import { ActionIcon, TableTd, TableTr } from '@mantine/core';
 import { Plus, Trash } from 'lucide-react';
+import TableInfoItem from '@/shared/ui/table-info-item';
 
 const TABLE_HEAD = [
   'name',
@@ -38,56 +39,15 @@ const InformationPage: React.FC = () => {
         <TableWrapper head={TABLE_HEAD}>
           {projects.map((project, index) => (
             <TableTr key={index}>
-              <TableTd>
-                <div className='p-3'>
-                  {project.name}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.type}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.revenue}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.fromDt}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.endDt}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.days}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.PM}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.planPercent}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.actualPercent}
-                </div>
-              </TableTd>
-              <TableTd>
-                <div className='p-3'>
-                  {project.status}
-                </div>
-              </TableTd>
+              <TableInfoItem info={project.type} />
+              <TableInfoItem info={project.revenue} />
+              <TableInfoItem info={project.fromDt} />
+              <TableInfoItem info={project.endDt} />
+              <TableInfoItem info={project.days} />
+              <TableInfoItem info={project.PM} />
+              <TableInfoItem info={project.planPercent} />
+              <TableInfoItem info={project.actualPercent} />
+              <TableInfoItem info={project.status} />
               <TableTd>
                 <ActionIcon variant='transparent' className='p-3 cursor-pointer'>
                   <Trash />
