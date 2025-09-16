@@ -39,6 +39,7 @@ const InformationPage: React.FC = () => {
         <TableWrapper head={TABLE_HEAD}>
           {projects.map((project, index) => (
             <TableTr key={index}>
+              <TableInfoItem info={project.name} />
               <TableInfoItem info={project.type} />
               <TableInfoItem info={project.revenue} />
               <TableInfoItem info={project.fromDt} />
